@@ -102,68 +102,7 @@ footer {
     width: 100%;
 }
 
-form {
-    display: block;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-/* Apply consistent styling to all form elements */
-input[type="text"],
-select,
-textarea {
-    width: 100%;                /* Full width for easy readability */
-    padding: 12px;              /* Ample padding inside the fields */
-    margin: 8px 0;              /* Consistent vertical spacing */
-    border: 1px solid #ccc;     /* Use #ccc for a clean, consistent border color */
-    border-radius: 8px;         /* Rounded corners for a modern feel */
-    font-size: 16px;            /* Ensuring a readable font size */
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;     /* Include padding in the total width */
-}
-
-/* Specific adjustments for Name and Email input boxes */
-#name-div input {
-    width: 70%;                /* Make the inputs smaller */
-    border: 1px solid #ccc;    /* Use the same border color as other inputs */
-    padding: 10px;             /* Maintain padding for good spacing */
-    border-radius: 10px;       /* Consistent rounded corners */
-    box-sizing: border-box;    /* Include padding and border in the width */
-}
-
-/* Override the select box (#attending) to ensure border color matches */
-#attending {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;     /* Same as inputs */
-    border-radius: 8px;         
-    width: 30%;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-/* Additional styling specific for textareas */
-textarea {
-    height: 120px;              /* A slightly taller textarea */
-    resize: vertical;           /* Allow vertical resize only */
-}
-
-button {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #e8491d;
-}
-
-button:checked {
-    background: #e8491d;
-}
+/* Remove form styles as they are no longer needed */
 
 .photo-grid {
     display: grid; /* Use CSS Grid for layout */
@@ -188,37 +127,7 @@ button:checked {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Form Feedback Messages */
-.form-message {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-}
-.form-message.success {
-    background-color: #d4edda; /* Light green */
-    color: #155724; /* Dark green */
-    border: 1px solid #c3e6cb;
-}
-.form-message.error {
-    background-color: #f8d7da; /* Light red */
-    color: #721c24; /* Dark red */
-    border: 1px solid #f5c6cb;
-}
-
-/* Smooth transition for showing and hiding fields */
-.message-div {
-    transition: all 1s ease-in-out; /* Add a smooth transition */
-    opacity: 0; /* Start hidden */
-    max-height: 0; /* Collapse the height */
-    overflow: hidden; /* Prevent content from overflowing */
-}
-
-.message-div.show {
-    opacity: 1; /* Make visible */
-    max-height: 200px; /* Expand height (adjust as needed) */
-}
+/* Remove RSVP form styles */
 
 .invitation {
     font-size: 1.1em; /* Slightly larger font for the invitation text */
