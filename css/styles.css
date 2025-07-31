@@ -1,0 +1,420 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgb(95, 74, 51);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 20px;
+    background-image: url("../Background_Photos/istockphoto-1294181713-612x612\ \(1\).jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Makes the background fixed while scrolling */
+    image-rendering: -webkit-optimize-contrast; /* Improve sharpness on webkit browsers */
+    image-rendering: crisp-edges; /* Improve overall image crispness */
+    -webkit-font-smoothing: antialiased; /* Smoother text rendering */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center child elements horizontally */
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    max-width: 850px;
+    width: 100%; /* Ensure divs take up the full width of their container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Keep the content inside the div left-aligned */
+    background-color: #d7f9df; /* Set a white background for the section */
+}
+
+
+
+.header-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 55vh;
+    overflow: hidden;
+}
+
+.header-images img {
+    width: 33.33%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+header {
+    position: relative;
+    text-align: center;
+}
+
+header h1 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(95, 74, 51);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 4em; /* Increase the font size for the main title */
+    font-family: 'Times New Roman', serif; /* Use a serif font for the title */	
+    margin: 0 0 10px 0; /* Remove top margin to eliminate white strip */
+    z-index: 2; /* Ensure text stays on top */
+    width: 100%; /* Full width for better centering */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove any default padding */
+    color: rgb(95, 74, 51);
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    background: #e8491d;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+form {
+    display: block;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/* Apply consistent styling to all form elements */
+input[type="text"],
+select,
+textarea {
+    width: 100%;                /* Full width for easy readability */
+    padding: 12px;              /* Ample padding inside the fields */
+    margin: 8px 0;              /* Consistent vertical spacing */
+    border: 1px solid #ccc;     /* Use #ccc for a clean, consistent border color */
+    border-radius: 8px;         /* Rounded corners for a modern feel */
+    font-size: 16px;            /* Ensuring a readable font size */
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;     /* Include padding in the total width */
+}
+
+/* Specific adjustments for Name and Email input boxes */
+#name-div input {
+    width: 70%;                /* Make the inputs smaller */
+    border: 1px solid #ccc;    /* Use the same border color as other inputs */
+    padding: 10px;             /* Maintain padding for good spacing */
+    border-radius: 10px;       /* Consistent rounded corners */
+    box-sizing: border-box;    /* Include padding and border in the width */
+}
+
+/* Override the select box (#attending) to ensure border color matches */
+#attending {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;     /* Same as inputs */
+    border-radius: 8px;         
+    width: 30%;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Additional styling specific for textareas */
+textarea {
+    height: 120px;              /* A slightly taller textarea */
+    resize: vertical;           /* Allow vertical resize only */
+}
+
+button {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e8491d;
+}
+
+button:checked {
+    background: #e8491d;
+}
+
+.photo-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 15px; /* Add spacing between photos */
+    margin: 20px 0; /* Add spacing above and below the grid */
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 350px; /* Increased height for better portrait display */
+    object-fit: cover; /* crop image to fill the fixed area */
+    object-position: center 30%; /* Position slightly above center to better frame faces */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Add a hover effect */
+    cursor: pointer;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Feedback Messages */
+.form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+.form-message.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border: 1px solid #c3e6cb;
+}
+.form-message.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border: 1px solid #f5c6cb;
+}
+
+/* Smooth transition for showing and hiding fields */
+.message-div {
+    transition: all 1s ease-in-out; /* Add a smooth transition */
+    opacity: 0; /* Start hidden */
+    max-height: 0; /* Collapse the height */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.message-div.show {
+    opacity: 1; /* Make visible */
+    max-height: 200px; /* Expand height (adjust as needed) */
+}
+
+.invitation {
+    font-size: 1.1em; /* Slightly larger font for the invitation text */
+    margin: 20px 0; /* Add spacing above and below the invitation text */
+    text-align: center; /* Center the invitation text */
+}
+
+.invitation h2 {
+    font-family: 'elegant', serif; /* Use a serif font for the invitation title */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.invitation p {
+    margin: 25px 0;
+}
+
+/* Responsive iframe styles */
+iframe {
+    width: 100%; /* Make iframe responsive */
+    max-width: 600px; /* Set a maximum width */
+    height: auto; /* Adjust height automatically */
+    border: none; /* Remove border for a cleaner look */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 16px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1001;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-nav.prev {
+    left: 20px;
+}
+
+.lightbox-nav.next {
+    right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .lightbox-nav {
+        padding: 12px;
+        font-size: 20px;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+    }
+}
+
+/* Mobile responsiveness for devices with max-width 600px */
+@media screen and (max-width: 600px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-images {
+        flex-direction: column;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-images img {
+        width: 100%;
+        height: 33.33vh;
+        margin: 0;
+        display: block; /* Remove any inline spacing */
+    }
+  
+    header h1 {
+        font-size: 2.5em; /* Slightly smaller on mobile */
+        width: 90%; /* Prevent text from touching edges */
+        top: 60%; /* Adjust position for smaller screens */
+    }
+  
+    header h3 {
+        font-size: 1.2em;
+    }
+  
+    main {
+        padding: 10px;
+    }
+  
+    section {
+        padding: 10px 5px;
+        max-width: 100%;
+    }
+  
+    /* Make input fields, textareas, and selects use full width on smaller screens */
+    input[type="text"],
+    textarea,
+    select {
+        width: 100%;
+    }
+
+    #name-div input {
+         width: 70%;
+    }
+  
+    /* Adjust the selection box specifically */
+    #attending {
+        width: 70%;
+        padding: 10px;
+        margin: 5px 0;
+    }
+  
+    /* Adjust grid columns for photos */
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 10px 0;
+    }
+  
+    .photo-grid img {
+        border-radius: 5px;
+    }
+
+    /* Responsive iframe styles */
+    iframe {
+        max-width: 100%; /* Ensure iframe fits within smaller screens */
+        height: auto; /* Adjust height dynamically */
+    }
+
+    .header-images {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header-images img {
+        width: 100%;
+        height: 33.33vh;
+    }
+
+    header {
+        min-height: auto;
+    }
+}
